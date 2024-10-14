@@ -27,7 +27,7 @@ repeat
 	--если нет доступных ходов, то перемешиваем поле, пока не появятся возможные ходы
 	if (logic:hasAvailableMove() == false) then
 		repeat
-			logic:shuffleGrid()
+			logic:mix()
 		until logic:hasAvailableMove()
 		print("No available turns! Shuffle!")
 		visualizer:dump(logic.grid)		

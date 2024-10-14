@@ -25,3 +25,15 @@ end
 function Logic:mix()
 	print('Run function mix')
 end
+
+function Logic:isMergeAvailable()
+	return true
+end
+
+function Logic:hasAvailableMove()
+	return true
+end
+
+function Logic:shuffleGrid()
+	print('Run function shuffleGrid')
+end

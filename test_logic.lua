@@ -37,7 +37,7 @@ function TestLogic:init()
 	end
 	if (self:hasAvailableMove() == false) then
 		repeat
-		self:shuffleGrid()
+		self:mix()
 		until self:hasAvailableMove()
 	end	
 end
@@ -369,7 +369,8 @@ function TestLogic:hasAvailableMove()
 	return hasMove
 end
 
-function TestLogic:shuffleGrid()
+function TestLogic:mix()
+	repeat
 	--собираем все имеющиеся клетки в один массив
 	local allCells = {}
 	for x=0, #(self.grid) do
@@ -390,4 +391,5 @@ function TestLogic:shuffleGrid()
 			table.remove(allCells, #allCells)
 		end
 	end
+	until self:isMergeAvailable(self.grid) == false
 end
